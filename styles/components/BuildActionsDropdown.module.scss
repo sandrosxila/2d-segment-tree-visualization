@@ -1,0 +1,84 @@
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.button{
+    $active-color: #188866;
+    $hover-color: #1b9e77;
+    $disabled-color: #20c997;
+
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $active-color;
+    color: white;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: all 0.25s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $hover-color;
+    }
+
+    &:disabled{
+        cursor: auto;
+        background-color: $disabled-color;
+    }
+
+    &:after{
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-left: 0.3em solid transparent;
+        border-bottom: 0;
+        transition: all 0.15s ease-in-out;
+    }
+}
+
+.button-active{
+    &:after{
+        transform: rotate(180deg);
+    }
+}
+
+.dropdown-list{
+    all: unset;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid #d1d1d1;
+    border-top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0 0 0.35rem 0.35rem;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+
+.dropdown-list-visible{
+    opacity: 1;
+}
+
+.dropdown-list-item{
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.15s ease-in-out;
+    text-transform: capitalize;
+
+    &:hover{
+        color: #1e2125;
+        background-color: #e9ecef;
+        cursor: pointer;
+    }
+}

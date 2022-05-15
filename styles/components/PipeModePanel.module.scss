@@ -1,0 +1,24 @@
+.form{
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem;
+    border: 1px solid rgb(37, 37, 37);
+    border-radius: 0.25rem;
+}
+
+.radio-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.15rem;
+}
+
+.radio-label{
+    user-select: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
