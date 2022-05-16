@@ -1,3 +1,13 @@
+# 2D Segment Tree Visualization
+
+## About Project
+
+2D Segment Tree Visualization Web-Page written in the Next.js Framework.
+
+This project is deployed on [Vercel](https://2d-segment-tree-visualization.vercel.app/).
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
