@@ -328,6 +328,8 @@ const addAllBtn = document.getElementById("add-all");
 const backBtn = document.getElementById("back");
 const buildBtn = document.getElementById("build");
 const answerBtn = document.getElementById("answer");
+const clearBtn = document.getElementById("clear");
+
 function addSlow(i, j, N, M, timeDelay) {
     if (i < N) {
         if (j < M) {
@@ -384,6 +386,7 @@ addAllBtn.addEventListener("click", async () => {
         j = 0;
     }
 });
+
 backBtn.addEventListener("click", async () => {
     // console.log(leafs);
     if (leafs.length !== 0) {
@@ -396,8 +399,21 @@ backBtn.addEventListener("click", async () => {
     }
 });
 
-buildBtn.addEventListener("click", async () => {
-    // console.log(ROOT);
+clearBtn.addEventListener("click", async () => {
+    if (ROOT.isEmpty === false) {
+        scene.remove(ROOT.nodeObject);
+        while (scene.children.length !== 0) {
+            scene.remove(scene.children[0]);
+        }
+        addLight(-1, 2, 4);
+        addLight(1, -1, -2);
+        ROOT = new Node();
+        i = 0;
+        j = 0;
+    }
+});
+
+async function buildEvent(){
     if (ROOT.isEmpty === false) {
         while (scene.children.length) scene.remove(scene.children[0]);
         addLight(-1, 2, 4);
@@ -413,7 +429,9 @@ buildBtn.addEventListener("click", async () => {
         }
     }
     await drawTree(ROOT);
-});
+}
+
+buildBtn.addEventListener("click", buildEvent);
 
 let cleanUpTree;
 answerBtn.addEventListener('click', async () => {
@@ -463,60 +481,62 @@ class Node {
     }
 }
 
-let inputContent;
-
 document.getElementById('fileUploadInput').addEventListener('change', (event) => {
     const input = event.target
     if ('files' in input && input.files.length > 0) {
         placeFileContent(
-            inputContent,
             input.files[0])
     }
 });
 
-function placeFileContent(target, file) {
+function doBuild(input){
+    if (ROOT.isEmpty === false) {
+        scene.remove(ROOT.nodeObject);
+        while (scene.children.length !== 0) {
+            scene.remove(scene.children[0]);
+        }
+        addLight(-1, 2, 4);
+        addLight(1, -1, -2);
+        ROOT = new Node();
+        i = 0;
+        j = 0;
+    }
+    // console.log(input);
+    N = parseInt(input[0]);
+    M = parseInt(input[1]);
+    // console.log(N,M);
+    let index = 2;
+    A = [];
+    for (let i = 0; i < N; i++) {
+        let arr = []
+        for (let j = 0; j < M; j++) {
+            arr.push(parseInt(input[index]));
+            index++;
+        }
+        // console.log(arr);
+        A.push(arr);
+    }
+    // console.log(A);
+    visualiseArray(N, M);
+    buildActionsButton.disabled = false;
+    queryActionsButton.disabled = false;
+    totalHeight = Math.ceil(Math.log(N * M) / Math.log(2)) + 1;
+    maxLength = 0;
+    SKETCH = new Node();
+    for (let i = 0; i < N; i++) {
+        for (let j = 0; j < M; j++) {
+            build(SKETCH, A[i][j], j + 1, i + 1);
+            maxLength = Math.max(maxLength, (A[i][j]).toString().length);
+        }
+    }
+    buildEvent();
+}
+
+function placeFileContent(file) {
     readFileContent(file).then(content => {
         content = content.replace(/[\r\n]+/g," ");
         const input = content.split(' ');
-        if (ROOT.isEmpty === false) {
-            scene.remove(ROOT.nodeObject);
-            while (scene.children.length !== 0) {
-                scene.remove(scene.children[0]);
-            }
-            addLight(-1, 2, 4);
-            addLight(1, -1, -2);
-            ROOT = new Node();
-            i = 0;
-            j = 0;
-        }
-        // console.log(input);
-        N = parseInt(input[0]);
-        M = parseInt(input[1]);
-        // console.log(N,M);
-        let index = 2;
-        A = [];
-        for (let i = 0; i < N; i++) {
-            let arr = []
-            for (let j = 0; j < M; j++) {
-                arr.push(parseInt(input[index]));
-                index++;
-            }
-            // console.log(arr);
-            A.push(arr);
-        }
-        // console.log(A);
-        visualiseArray(N, M);
-        buildActionsButton.disabled = false;
-        queryActionsButton.disabled = false;
-        totalHeight = Math.ceil(Math.log(N * M) / Math.log(2)) + 1;
-        maxLength = 0;
-        SKETCH = new Node();
-        for (let i = 0; i < N; i++) {
-            for (let j = 0; j < M; j++) {
-                build(SKETCH, A[i][j], j + 1, i + 1);
-                maxLength = Math.max(maxLength, (A[i][j]).toString().length);
-            }
-        }
+        doBuild(input);
     }).catch(error => console.log(error))
 }
 // constants and variables

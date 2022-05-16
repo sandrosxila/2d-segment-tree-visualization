@@ -5,11 +5,10 @@
 }
 
 
-
 .button{
     $active-color: #c03240;
     $hover-color: #ca4f5b;
-    $disabled-color: #df616e;
+    $disabled-color: #df939a;
 
     all: unset;
     display: inline-flex;
@@ -69,7 +68,7 @@
 .dropdown-box{
     all: unset;
     position:absolute;
-    display: flex;
+    
     flex-direction: column;
     background-color: white;
     border: 1px solid #d1d1d1;
@@ -81,6 +80,7 @@
     padding: 0.5rem;
     gap: 0.25rem;
     opacity: 0;
+    display: none;
 
     .title{
         all:unset;
@@ -110,6 +110,7 @@
             border: 1px solid #c0c6cc;
             border-radius: 0.25rem 0 0 0.25rem;
             border-right: 0px;
+            font-size: 1rem;
         }
     
         .input{
@@ -141,6 +142,7 @@
 
 .dropdown-box-active{
     opacity: 1;
+    display: flex;
 }
 
 

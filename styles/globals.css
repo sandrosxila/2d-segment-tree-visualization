@@ -57,3 +57,15 @@ canvas {
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
+
+.svg-inline--fa, .fa-w-16 {
+  width: 1em;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}

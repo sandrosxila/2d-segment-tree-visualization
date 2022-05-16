@@ -7,7 +7,7 @@
 .button{
     $active-color: #188866;
     $hover-color: #1b9e77;
-    $disabled-color: #20c997;
+    $disabled-color: #96dbc7;
 
     all: unset;
     display: inline-flex;
@@ -51,7 +51,6 @@
 .dropdown-list{
     all: unset;
     position:absolute;
-    display: flex;
     flex-direction: column;
     background-color: white;
     border: 1px solid #d1d1d1;
@@ -61,10 +60,12 @@
     border-radius: 0 0 0.35rem 0.35rem;
     transition: all 0.1s ease-in-out;
     opacity: 0;
+    display: none;
 }
 
 .dropdown-list-visible{
     opacity: 1;
+    display: flex;
 }
 
 .dropdown-list-item{
@@ -75,6 +76,7 @@
     padding: 0.5rem;
     transition: all 0.15s ease-in-out;
     text-transform: capitalize;
+    user-select: none;
 
     &:hover{
         color: #1e2125;

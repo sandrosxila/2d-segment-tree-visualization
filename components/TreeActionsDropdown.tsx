@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styles from '../styles/components/BuildActionsDropdown.module.scss';
+import styles from '../styles/components/TreeActionsDropdown.module.scss';
 
-const BuildActionsDropdown = () => {
+const TreeActionsDropdown = () => {
 
     const [active, setActive] = useState(false);
     const onButtonClick = () => {
@@ -16,7 +16,7 @@ const BuildActionsDropdown = () => {
                 className={ `${styles['button']} ${active ? styles['button-active'] : ''}` }
                 onClick={ onButtonClick }
             >
-                Build Actions
+                Tree Actions
             </button>
             <div>
                 <ul className={ `${styles['dropdown-list']} ${active ? styles['dropdown-list-visible'] : ''}` }>
@@ -29,6 +29,9 @@ const BuildActionsDropdown = () => {
                     <hr className="dropdown-divider"/>
                     <li id="back" className={ `${styles['dropdown-list-item']}` }>
                         back
+                    </li>
+                    <li id="clear" className={ `${styles['dropdown-list-item']}` }>
+                        clear
                     </li>
                     <hr className="dropdown-divider"/>
                     <li id="add-all" className={ `${styles['dropdown-list-item']}` }>
@@ -44,4 +47,4 @@ const BuildActionsDropdown = () => {
     );
 };
 
-export default BuildActionsDropdown;
+export default TreeActionsDropdown;

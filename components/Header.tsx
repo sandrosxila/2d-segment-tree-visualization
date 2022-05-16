@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import NavBar from './NavBar';
 import styles from '../styles/components/Header.module.scss';
 
-const Header = () => {
+type Props = {
+    setShowFillForm: Dispatch<SetStateAction<boolean>>
+}
+
+const Header = ({ setShowFillForm }: Props) => {
     return (
         <header className={ styles['header'] }>
-            <NavBar/>
+            <NavBar setShowFillForm={ setShowFillForm }/>
         </header>
     );
 };

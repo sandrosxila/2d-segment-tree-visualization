@@ -1,0 +1,25 @@
+.button{
+    $active-color: #268492;
+    $hover-color: #196672;
+    $disabled-color: #78c8d4;
+
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $active-color;
+    color: white;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: all 0.25s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $hover-color;
+    }
+
+    &:disabled{
+        cursor: auto;
+        background-color: $disabled-color;
+    }
+}

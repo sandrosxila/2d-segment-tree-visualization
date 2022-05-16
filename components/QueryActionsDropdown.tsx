@@ -35,11 +35,11 @@ const QueryActionsDropdown = () => {
                         </span>
                         <div className={ `${styles['row']}` }>
                             <div>
-                                <label id="fromI" htmlFor='fieldFormI' className={ `${styles['input-label']}` }>I</label>
+                                <label id="fromI" htmlFor='fieldFormI' className={ `${styles['input-label']}` }>Row</label>
                                 <input type="text" id="fieldFromI" className={ `${styles['input']}` }/>
                             </div>
                             <div>
-                                <label id="fromJ" htmlFor='fieldFormJ' className={ `${styles['input-label']}` }>J</label>
+                                <label id="fromJ" htmlFor='fieldFormJ' className={ `${styles['input-label']}` }>Column</label>
                                 <input type="text" id="fieldFromJ" className={ `${styles['input']}` }/>
                             </div>
                         </div>
@@ -52,35 +52,40 @@ const QueryActionsDropdown = () => {
                         </span>
                         <div className={ `${styles['row']}` }>
                             <div>
-                                <label id="toI" htmlFor='fieldToI' className={ `${styles['input-label']}` }>I</label>
+                                <label id="toI" htmlFor='fieldToI' className={ `${styles['input-label']}` }>Row</label>
                                 <input type="text" id = "fieldToI" className={ `${styles['input']}` }/>
                             </div>
 
                             <div>
-                                <label id="toJ" htmlFor='fieldToJ' className={ `${styles['input-label']}` }>J</label>
+                                <label id="toJ" htmlFor='fieldToJ' className={ `${styles['input-label']}` }>Column</label>
                                 <input type="text" id = "fieldToJ" className={ `${styles['input']}` }/>
                             </div>
 
                         </div>
                     </div>
                     <hr className="dropdown-divider"/>
-                    <div id ="cells">
-                        { /* <!--                    <div class="container" style="flex-wrap: nowrap;justify-content: left;">--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                    </div>--> */ }
-                        { /* <!--                    <div class="container" style="flex-wrap: nowrap;justify-content: left;">--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                        <div class="cell"></div>--> */ }
-                        { /* <!--                    </div>--> */ }
+                    <div className={ `${styles['dropdown-box-section']}` }>
+                        <span className={ `${styles['title']}` }>
+                            Select Positions:
+                        </span>
+                        <div id ="cells">
+                            { /* <!--                    <div class="container" style="flex-wrap: nowrap;justify-content: left;">--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                    </div>--> */ }
+                            { /* <!--                    <div class="container" style="flex-wrap: nowrap;justify-content: left;">--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                        <div class="cell"></div>--> */ }
+                            { /* <!--                    </div>--> */ }
+                        </div>
                     </div>
                     <hr className="dropdown-divider"/>
                     { /* <!--                Result--> */ }

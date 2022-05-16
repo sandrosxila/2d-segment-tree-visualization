@@ -11,16 +11,12 @@ export default function Document() {
                 <Main />
                 <NextScript />
                 { /* Web-Page Arrangement */ }
-                <script src="lib/jquery-3.4.1.slim.min.js" defer></script>
-                <script src="lib/popper.min.js" defer></script>
-                <script src="lib/bootstrap.min.js" defer></script>
                 <script src="scripts/dom-script.js" type="text/javascript" defer></script>
 
                 { /* Three JS Libraries */ }
                 <script type="text/javascript" src="lib/three.js" defer></script>
                 <script type="text/javascript" src="lib/OrbitControls.js" defer></script>
                 <script type="text/javascript" src="lib/three.interaction.js" defer></script>
-                <script type="text/javascript" src="lib/dat.gui.module.js" defer></script>
 
                 { /* Three JS Script */ }
                 <script src="scripts/canvas-script.js" type="text/javascript" defer></script>

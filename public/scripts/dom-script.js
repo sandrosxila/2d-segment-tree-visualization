@@ -14,6 +14,7 @@ function visualiseArray(height,width){
     cells.innerHTML = "";
     for(let i = 1; i <= height; i++){
         let lineDiv = document.createElement('div');
+        lineDiv.style.display = 'flex';
         lineDiv.style.flexWrap = 'nowrap';
         lineDiv.style.justifyContent = 'left';
         lineDiv.setAttribute('class','container');

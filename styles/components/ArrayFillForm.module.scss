@@ -1,0 +1,105 @@
+.card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 36vw;
+    min-height: 36vw;
+    padding: 1rem 4rem;
+    background-color: #f8f8f8;
+    border: 0.15rem solid #e4e4e4;
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 0.2rem;
+    flex-direction: column;
+    box-shadow: 0 0 1rem 0.25rem rgba(173, 175, 180, 0.514);
+    z-index: 1500;
+
+    .title{
+        font-weight: 400;
+        font-size: 1.25rem;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .col{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col-rev{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .input{
+        width: 5rem;
+        border: 1px solid #c0c6cc;
+        border-radius: 0.25rem;
+        outline:none;
+        padding: 0.15rem 0.25rem;
+        box-sizing:border-box;
+        transition: 0.2s;
+
+        &:focus{
+            border-color:#86b7fe;
+            box-shadow: 0 0 0 0.15rem rgb(13 110 253 / 25%);
+        }
+
+        &:disabled{
+            background-color: #e7e7e7;
+        }
+    }
+
+    .input-small{
+        width: 2.5rem;
+    }
+
+    .button{
+        $active-color: #188866;
+        $hover-color: #1b9e77;
+        $disabled-color: #96dbc7;
+    
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $active-color;
+        color: white;
+        border-radius: 0.3rem;
+        padding: 0.35rem;
+        transition: all 0.25s ease-in-out;
+        font-size: 0.9rem;
+    
+        &:hover{
+            cursor: pointer;
+            background-color: $hover-color;
+        }
+    
+        &:disabled{
+            cursor: auto;
+            background-color: $disabled-color;
+        }
+    }
+
+    .button-fill{
+        $active-color: #268492;
+        $hover-color: #196672;
+        $disabled-color: #78c8d4;    
+    
+        background-color: $active-color;
+    
+        &:hover{
+            background-color: $hover-color;
+        }
+    
+        &:disabled{
+            background-color: $disabled-color;
+        }
+    }
+}
+

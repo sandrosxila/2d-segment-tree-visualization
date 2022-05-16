@@ -1,20 +1,31 @@
 import React from 'react';
-import BuildActionsDropdown from './BuildActionsDropdown';
+import TreeActionsDropdown from './TreeActionsDropdown';
 import PipeModePanel from './PipeModePanel';
 import QueryActionsDropdown from './QueryActionsDropdown';
 import UploadPanel from './UploadPanel';
 import styles from '../styles/components/Navbar.module.scss';
+import { Dispatch, SetStateAction } from 'react';
+import ArrayFillButton from './ArrayFillButton';
+import Credits from './Credits';
 
-const NavBar = () => {
+type Props = {
+    setShowFillForm: Dispatch<SetStateAction<boolean>>
+}
+
+const NavBar = ({ setShowFillForm }: Props) => {
     return (
         <nav className={ `${styles['navbar']}` } id="nav-bar">
-            <BuildActionsDropdown />
+            <TreeActionsDropdown />
 
             <QueryActionsDropdown />
 
             <PipeModePanel/>
 
             <UploadPanel/>
+
+            <ArrayFillButton setShowFillForm={ setShowFillForm }/>
+
+            <Credits/>
         </nav>
     );
 };
